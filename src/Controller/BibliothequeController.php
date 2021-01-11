@@ -39,8 +39,8 @@ class BibliothequeController extends AbstractController
         return $this->render('bibliotheque/books.html.twig', [
             'titre'=>'Livre',
             'livres' => $livreRepository->findAll(),
-            'editeurs' => $editeurRepository->findAll(),
-            'auteurs' => $auteurRepository->findAll(),
+           // 'editeurs' => $editeurRepository->findAll(),
+            //'auteurs' => $auteurRepository->findAll(),
             'categories' => $categorieReposiory->findAll(),
           //  'livres' => $livreRepository->findByCategorie($idcat),
 
@@ -72,8 +72,8 @@ class BibliothequeController extends AbstractController
             //dd($search),
             'titre' => 'Livre',
             'livres' => $livreRepository->filtreByBook($search),
-            'editeurs' => $editeurRepository->findAll(),
-            'auteurs' => $auteurRepository->findAll(),
+          //  'editeurs' => $editeurRepository->findAll(),
+           // 'auteurs' => $auteurRepository->findAll(),
             'categories' => $categorieReposiory->findAll(),
             //  'livres' => $livreRepository->findByCategorie($idcat),
 
@@ -86,16 +86,16 @@ class BibliothequeController extends AbstractController
         ,CategorieRepository $categorieReposiory,Request $request): Response
     {
 
-       // $cat = $request->request->get('cat');
-        $edi = $request->request->get('edi');
+       $cat = $request->request->get('cat');
+       // $edi = $request->request->get('edi');
 
 
 
         return $this->render('bibliotheque/books.html.twig', [
             //dd($cat,$edi),
             'titre' => 'Livre',
-            'livres' => $livreRepository->filtreBySelected($edi),
-            'editeurs' => $editeurRepository->findAll(),
+            'livres' => $livreRepository->filtreBySelected($cat),
+           // 'editeurs' => $editeurRepository->findAll(),
             'categories' => $categorieReposiory->findAll(),
 
         ]);

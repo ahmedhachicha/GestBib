@@ -53,7 +53,7 @@ class Livre
      * @ORM\ManyToOne(targetEntity=Editeur::class, inversedBy="livres")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $editeur;
+    public $editeur;
 
     /**
      * @ORM\ManyToOne(targetEntity=Categorie::class, inversedBy="livres")

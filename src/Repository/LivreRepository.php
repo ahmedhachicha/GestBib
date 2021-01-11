@@ -32,15 +32,15 @@ class LivreRepository extends ServiceEntityRepository
             ->getQuery()
             ->execute();
     }
-    public function filtreBySelected ($edi)//$cat
+    public function filtreBySelected ($cat)//$cat
     {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.editeur LIKE :edi ')//OR e.categorie LIKE :cat
-            ->setParameter('edi',  $edi )
-            //->setParameter( 'cat' , $cat)
+        return $this->createQueryBuilder('l')
+            ->leftJoin('l.categorie', 'c')
+            ->addSelect('c')
+            ->andWhere('c.designation = :designation')
+            ->setParameter('designation', $cat)
             ->getQuery()
-            ->execute();
-
+            ->getResult();
 
     }
 

@@ -105,6 +105,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('livresection') }}"><i class="fa fa-book"></i>Nos Livres</a>
                         </li>
+                        {% if app.user %}
+                            <li class="nav-item">
+                                <a class="nav-link" href=""><i class="fa fa-book"></i>Mes Livres</a>
+                            </li>
+                        {% endif %}
 
                     </ul>
 
@@ -137,18 +142,20 @@
     <select name="cat">
         <option value="" selected>Liste des Categories</option>
         {% for c,categorie in categories %}
-        <option name="cat" value="{{ categorie.id}}" >{{ categorie.designation}}</option>
+        <option name="cat" value="{{ categorie.designation}}" >{{ categorie.designation}}</option>
         {% endfor %}
     </select>
 
-    <select name="edi">
+   <!-- <select name="edi">
         <option value="" selected>Liste des editeurs</option>
-        {% for c,editeur in editeurs %}
-            <option name="edi" value="{{ editeur.id}}" >{{ editeur.nomEditeur}}</option>
-        {% endfor %}
-    </select>
+
+            <option name="edi" value="" ></option>
+
+    </select>-->
     <input value ="Trier" type="submit">
 </form>
+
+            <br>
             <div class="shop-section">
                 {% for c,livre in livres %}
                     <div class="card"  id={{ livre.titre}} >
