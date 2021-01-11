@@ -31,6 +31,9 @@
                 <img class="card-img-top" src="{{ livre.image}}">                {% if app.user %}
                     <a href="{{ path('panier_add', {'id': livre.id})}}" class="navbar-btn btn">
                         <i class="fa fa-shopping-cart"></i> Add to panier</a>
+                    <a href="{{ asset('pdf/' ~ livre.bookpdf) }}" class="navbar-btn btn">
+                        <i class="fa fa-print"></i> Ouvrir le livre en tant que PDF</a>
+
                 {% endif %}
             </div>
 

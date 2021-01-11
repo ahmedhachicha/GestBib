@@ -18,6 +18,7 @@
                 <th>Prix</th>
                 <th>Isbn</th>
                 <th>Image</th>
+                <th>pdf</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -33,6 +34,8 @@
                 <td>{{ livre.prix }}</td>
                 <td>{{ livre.isbn }}</td>
                 <td>{{ livre.image}}</td>
+                <td>{{ livre.bookpdf}}</td>
+
 
                 <td>
                     <a href="{{ path('livre_show', {'id': livre.id})}}">

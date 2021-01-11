@@ -69,6 +69,22 @@ class Livre
      * @ORM\Column(type="string", length=255)
      */
     private $image;
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $bookpdf;
+
+    public function getBookpdf()
+    {
+        return $this->bookpdf;
+    }
+
+    public function setBookpdf($bookpdf)
+    {
+        $this->bookpdf = $bookpdf;
+
+        return $this;
+    }
 
     public function __construct()
     {
