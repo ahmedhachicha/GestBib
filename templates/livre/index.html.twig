@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livre index{% endblock %}
+
+{% block body %}
+    <h1>Livre</h1>
+    <br>
+
+    <table class="table" border="1">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>NbPage</th>
+                <th>DateEdition</th>
+                <th>NbExemplaire</th>
+                <th>Prix</th>
+                <th>Isbn</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for c,livre in livres %}
+            <tr>
+                <td>{{ c+1 }}</td>
+                <td>{{ livre.id }}</td>
+                <td>{{ livre.titre }}</td>
+                <td>{{ livre.nbPage }}</td>
+                <td>{{ livre.dateEdition ? livre.dateEdition|date('Y-m-d') : '' }}</td>
+                <td>{{ livre.nbExemplaire }}</td>
+                <td>{{ livre.prix }}</td>
+                <td>{{ livre.isbn }}</td>
+                <td>{{ livre.image}}</td>
+
+                <td>
+                    <a href="{{ path('livre_show', {'id': livre.id})}}">
+                        <span class="btn btn-success">
+                            <i class="fa fa-eye"></i>
+                        </span>
+                    </a>
+                    <a href="{{ path('livre_edit', {'id': livre.id})}}">
+                        <span class="btn btn-primary">
+                            <i class="fa fa-pencil"></i>
+                        </span>
+                    </a>
+                    <a href="{{ path('livre_delete', {'id': livre.id})}}">
+                        <span class="btn btn-danger">
+                            <i class="fa fa-trash-o"></i>
+                        </span>
+                    </a>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+<a href="{{ path('livre_new')}}">
+                        <span class="btn btn-primary">
+                            <i class="fa fa-plus"></i>
+
+                        </span>Ajouter un livre
+
+{% endblock %}

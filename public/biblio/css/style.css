@@ -1,0 +1,509 @@
+/**********************************/
+/********** General CSS ***********/
+/**********************************/
+body {
+    color: #353535;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    background: #f3f6ff;
+}
+
+a {
+    color: #FF6F61;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #353535;
+    outline: none;
+    text-decoration: none;
+}
+
+h1 {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 900;
+}
+
+h2 {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 700;
+}
+
+@media(min-width: 992px) {
+    .container-fluid {
+        padding-right: 60px;
+        padding-left: 60px;
+    }
+}
+
+
+/**********************************/
+/******** Back to Top CSS *********/
+/**********************************/
+/**********************************/
+/********* Form Input CSS *********/
+/**********************************/
+
+.btn {
+    color: #FF6F61;
+    background: #ffffff;
+    border: 1px solid #FF6F61;
+
+}
+
+
+
+/**********************************/
+/******* Normal Slider CSS ********/
+/**********************************/
+/**********************************/
+/********** Top Bar CSS ***********/
+/**********************************/
+.top-bar {
+    padding: 3px 0;
+    font-size: 14px;
+    color: #FF6F61;
+    background: #000000;
+}
+
+.top-bar i {
+    margin-right: 5px;
+}
+
+.top-bar .col-sm-6:first-child {
+    text-align: left;
+}
+
+.top-bar .col-sm-6:last-child {
+    text-align: right;
+}
+
+@media (max-width: 575.98px) {
+    .top-bar {
+        border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+
+    .top-bar .col-sm-6:first-child,
+    .top-bar .col-sm-6:last-child {
+        text-align: center;
+    }
+}
+
+
+/**********************************/
+/*********** Nav Bar CSS **********/
+/**********************************/
+.nav {
+    position: relative;
+}
+
+@media (min-width: 992px) {
+    .nav .container-fluid {
+        padding-left: 52px;
+        padding-right: 52px;
+    }
+}
+
+.nav .navbar {
+    height: 100%!important;
+    padding: 0;
+}
+
+.nav {
+    margin-top: 0;
+    border: 0;
+    border-radius: 0;
+    background: #FF6F61;
+}
+
+.nav a.active {
+    color: #353535;
+    background: #f8f9fa;
+}
+
+@media (min-width: 768px) {
+    .nav,
+    .nav .navbar {
+        background: #FF6F61 !important;
+    }
+
+    .nav .navbar-brand {
+        display: none;
+    }
+
+    .nav .navbar-dark a.nav-link {
+        color: #ffffff;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+    .nav .navbar-dark a.nav-link:hover,
+    .nav .navbar-dark a.nav-link.active {
+        color: #000000;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        padding: 5px 0;
+    }
+
+    .nav,
+    .nav .navbar {
+        background: #000000 !important;
+    }
+
+    .nav a.nav-link {
+        padding: 5px 0;
+    }
+
+    .nav {
+        box-shadow: none;
+    }
+}
+
+
+/**********************************/
+/********* Bottom Bar CSS *********/
+/**********************************/
+/**********************************/
+/*********** Header CSS ***********/
+/**********************************/
+.header {
+    position: relative;
+}
+
+.header .col-md-3,
+.header .col-md-6 {
+
+
+}
+
+.header .navbar {
+    padding: 0;
+    height: 200%;
+    max-height: 1000px;
+    overflow: hidden;
+    background: #ffffff !important;
+}
+
+.header .navbar-nav {
+    width: 100%;
+    padding: 15px 0;
+}
+
+.header .navbar li {
+    padding: 0 30px;
+    border-bottom: 1px solid #f3f6ff;
+}
+
+.header .navbar li:last-child {
+    border-bottom: none;
+}
+
+.header .navbar a {
+    color: #353535;
+}
+
+
+.header .navbar i {
+    color: #FF6F61;
+    width: 20px;
+    text-align: center;
+    margin-right: 8px;
+}
+
+
+
+/**********************************/
+/********* Breadcrumb CSS *********/
+/**********************************/
+
+
+
+
+/**********************************/
+/********** Category CSS **********/
+/**********************************/
+.category {
+    position: relative;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.category .col-md-3 {
+    padding: 0;
+}
+
+/**********************************/
+/*********** Feature CSS **********/
+/**********************************/
+/**********************************/
+/******** Product Item CSS ********/
+/**********************************/
+/**********************************/
+/******* Product Detail CSS *******/
+/**********************************/
+/**********************************/
+/********** Sidebar CSS ***********/
+/**********************************/
+.sidebar-widget {
+    padding: 30px;
+    background: #ffffff;
+}
+
+.sidebar-widget:not(:first-child) {
+    padding-top: 0;
+}
+
+.sidebar-widget .title {
+    position: relative;
+    font-size: 22px;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+
+.sidebar-widget.category {
+    margin: 0;
+}
+
+.sidebar-widget.category .navbar {
+    padding: 0;
+    overflow: hidden;
+    background: #ffffff !important;
+}
+
+.sidebar-widget.category .navbar-nav {
+    width: 100%;
+}
+
+.sidebar-widget.category .navbar li {
+    border-bottom: 1px solid #f3f6ff;
+}
+
+.sidebar-widget.category .navbar li:last-child {
+    border-bottom: none;
+}
+
+.sidebar-widget.category .navbar a {
+    color: #353535;
+}
+
+.sidebar-widget.category .navbar a:hover {
+    color: #FF6F61;
+}
+
+.sidebar-widget.category .navbar i {
+    color: #FF6F61;
+    width: 20px;
+    text-align: center;
+    margin-right: 8px;
+}
+
+.sidebar-widget.category .navbar a:hover i {
+    color: #353535;
+}
+
+.sidebar-widget.brands ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-widget.brands ul li {
+    margin-bottom: 12px;
+}
+
+.sidebar-widget.brands ul li:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-widget.brands ul li a {
+    color: #353535;
+    white-space: nowrap;
+    display: inline-block;
+    line-height: 23px;
+    transition: all .3s;
+}
+
+.sidebar-widget.brands ul li a::before {
+    content: '\f105';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding-right: 5px;
+}
+
+.sidebar-widget.brands ul li a:hover {
+    color: #FF6F61;
+}
+
+.sidebar-widget.brands ul li a:hover::before {
+    content: '\f101';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.sidebar-widget.brands ul li a:hover {
+    padding-left: 10px;
+}
+
+.sidebar-widget.brands ul li span {
+    display: inline-block;
+    float: right;
+    color: #666666;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.sidebar-widget.widget-slider {
+    position: relative;
+}
+
+.sidebar-widget.image a {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sidebar-widget.image img {
+    max-width: 100%;
+    transition: .3s;
+}
+
+.sidebar-widget.image img:hover {
+    transform: scale(1.1);
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+.sidebar-widget.tag a {
+    display: inline-block;
+    margin: 0 0 4px 0;
+    padding: 3px 8px;
+    font-size: 14px;
+    color: #353535;
+    background: #ffffff;
+    border: 1px solid #353535;
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.sidebar-widget.tag a:hover {
+    color: #ffffff;
+    background: #FF6F61;
+    border-color: #FF6F61;
+}
+
+
+/**********************************/
+/******** Footer Bottom CSS *******/
+/**********************************/
+.footer-bottom {
+    position: relative;
+    padding: 25px 0;
+    background: #000000;
+}
+
+.footer-bottom .copyright {
+    text-align: left;
+}
+
+.footer-bottom .template-by {
+    text-align: right;
+}
+
+.footer-bottom .copyright p,
+.footer-bottom .template-by p {
+    color: #ffffff;
+    font-weight: 400;
+    margin: 0;
+}
+
+.footer-bottom .copyright p a,
+.footer-bottom .template-by p a {
+    font-weight: 600;
+}
+
+.footer-bottom .copyright p a:hover,
+.footer-bottom .template-by p a:hover {
+    color: #ffffff;
+}
+.card-shop {
+    width: auto;
+    font-family: arial;
+    padding : 2px;
+
+
+}
+.card
+{   display: grid;
+    padding-left: 5px;
+}
+.shop-section-details
+{
+    position: absolute;
+    padding-top: 2px;
+    width: 640px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.filtre-section{
+    padding-top: 2px;
+    padding-bottom: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+.shop-section
+{
+    position: absolute;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+.price-shop {
+    color: grey;
+    font-size: 22px;
+}
+
+h5
+{
+    text-align: center !important;
+}
+.card-text
+{
+font-size: 13px;
+}
+.card-img-top
+{
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3px;
+}
+
+.card-shop button:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768.98px) {
+    .footer-bottom .copyright,
+    .footer-bottom .template-by {
+        text-align: center;
+    }
+
+}

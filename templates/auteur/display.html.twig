@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}Display Auteur{% endblock %}
+
+{% block body %}
+
+    <fieldset>
+        <legend>Auteur informations (ID : #{{ aut.id }}) </legend>
+        <label>Prenom :</label>{{ aut.prenom }}<br>
+        <label> Nom : </label>{{ aut.nom }}<br>
+        <label> Biographie : </label>{{ aut.bio }}<br>
+        <label>
+        </label>
+    </fieldset>
+
+{% endblock %}
+
+
+

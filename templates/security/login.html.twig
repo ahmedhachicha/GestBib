@@ -1,0 +1,53 @@
+{{ include ('bibliotheque/navbar.html.twig') }}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <br>
+    <center>
+    <div class="col-md-12">
+<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-4">
+            You are logged in as {{ app.user.username }}
+            <a href="{{ path('app_logout') }}">
+                        <span class="btn btn-danger">
+                            Logout
+                            <i class="fa fa-arrow-circle-down"></i>
+                        </span>
+            </a>
+        </div>
+    {% endif %}
+    <span class="btn btn-primary">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <br>
+    <label for="inputUsername">Username</label>
+    <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" required autofocus>
+    <label for="inputPassword">Password</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" required>
+
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+    >
+
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> Remember me
+            </label>
+        </div>
+
+
+    <button class="btn btn-lg btn-success" type="submit">
+        Sign in
+    </button>
+    </span>
+    </center>
+</form>
+    </div>
+{% endblock %}
+{{ include ('bibliotheque/footer.html.twig') }}

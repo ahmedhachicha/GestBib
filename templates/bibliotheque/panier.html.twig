@@ -1,0 +1,71 @@
+
+{{ include ('bibliotheque/navbar.html.twig') }}
+
+{{ include ('bibliotheque/sidebar.html.twig') }}
+
+
+<!-- ******************** CHANGE THIS ******************** -->
+
+{% if items | length > 0%}
+
+<div class="col-md-6">
+    <center><h3>Panier</h3></center>
+<br>
+    <br>
+
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Editeur</th>
+            <th>Categorie</th>
+            <th>Quantité</th>
+            <th>Prix (par item)</th>
+            <th>Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+    {% for item in items %}
+    <tr>
+            <td>{{item.livre.titre}}</td>
+            <td>{{item.livre.editeur.nomEditeur}}</td>
+            <td>{{item.livre.categorie.designation}}</td>
+            <td>{{item.qte}}</td>
+        <td>{{item.livre.prix}}</td>
+            <td><a href="{{ path('panier_remove', {'id': item.livre.id})}}" class="">
+                <i class="fa fa-trash-o"></i>
+                </a>
+            </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <th >Totale : </th>
+        <th><bold>{{ totale }} TND</bold></th>
+    </tr>
+    </tfoot>
+</table>
+    <a href="#" class="btn">
+
+        <i class="fa fa-arrow-circle-o-up"></i>
+        Confirmer</a>
+    {% else %}
+    <p>Empty </p>
+{% endif %}
+</div>
+
+<!-- ***********************************************************  -->
+{{ include ('bibliotheque/footer.html.twig') }}

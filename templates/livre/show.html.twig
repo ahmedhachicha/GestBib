@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livre{% endblock %}
+
+{% block body %}
+    <h1>Livre</h1>
+<br>
+
+    <fieldset>
+        <legend>Editeur informations (ID : #{{ livre.id }} ) </legend>
+        <label> Titre : </label>{{ livre.titre }}<br>
+        <label> NbPage : </label>{{ livre.nbPage }}<br>
+        <label> DateEdition : </label>{{ livre.dateEdition ? livre.dateEdition|date('Y-m-d') : '' }}<br>
+        <label> Nb Exemplaire : </label>{{ livre.nbExemplaire }}<br>
+        <label> Prix : </label>{{ livre.prix }}<br>
+        <label> ISBN : </label>{{ livre.isbn }}<br>
+        <label> Editeur(s) : </label>{{ livre.editeur.nomEditeur}}<br>
+        <label> Categorie : </label>{{ livre.categorie.designation}}<br>
+        <label> Auteur(s) :</label>
+                {% for auteur in livre.auteurs %}
+                    |{{ auteur.prenom }} {{ auteur.nom }}|
+                {% endfor %}
+        <br>
+        <label>{{ livre.image}}</label>
+    </fieldset>
+    {{ include('livre/_delete_form.html.twig') }}
+{% endblock %}

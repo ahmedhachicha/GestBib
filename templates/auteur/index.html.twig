@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Index Auteur{% endblock %}
+
+{% block body %}
+
+    <h1>Auteurs</h1>
+<br>
+    <table class="table" border="1">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>id</th>
+            <th>Prenom</th>
+            <th>Nom</th>
+            <th>Biography</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for c,x in listAuteurs %}
+            <tr>
+                <td>{{ c+1 }}</td>
+                <td>{{ x.id }}</td>
+                <td>{{ x.prenom }}</td>
+                <td>{{ x.nom }}</td>
+                <td>{{ x.bio }}</td>
+                <td>
+                    <a href="{{ path('display_auteur', {'id': x.id})}}">
+                        <span class="btn btn-success">
+                            <i class="fa fa-eye"></i>
+                        </span>
+                    </a>
+                    <a href="{{ path('edit_auteur', {'id': x.id})}}">
+                        <span class="btn btn-primary">
+                            <i class="fa fa-pencil"></i>
+                        </span>
+                    </a>
+                    <a href="{{ path('delete_auteur', {'id': x.id})}}">
+                        <span class="btn btn-danger">
+                            <i class="fa fa-trash-o"></i>
+                        </span>
+                    </a>
+
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ path('new_auteur')}}">
+                        <span class="btn btn-primary">
+                            <i class="fa fa-plus"></i>
+
+                        </span>
+        Ajouter un auteur
+
+    </a>
+
+
+
+{% endblock %}

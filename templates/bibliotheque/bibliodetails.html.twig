@@ -1,0 +1,42 @@
+
+{{ include ('bibliotheque/navbar.html.twig') }}
+{{ include ('bibliotheque/sidebar.html.twig') }}
+
+
+        <!-- CHANGE THIS -->
+
+        <div class="col-md-2">
+
+            <div class="shop-section-details">
+
+        <div class="card">
+        <fieldset>
+            <legend>Livre (ID : #{{ livre.id }} ) </legend>
+            <label> Titre : </label>{{ livre.titre }}<br>
+            <label> NbPage : </label>{{ livre.nbPage }}<br>
+            <label> DateEdition : </label>{{ livre.dateEdition ? livre.dateEdition|date('Y-m-d') : '' }}<br>
+            <label> Nb Exemplaire : </label>{{ livre.nbExemplaire }}<br>
+            <label> Prix : </label>{{ livre.prix }}<br>
+            <label> ISBN : </label>{{ livre.isbn }}<br>
+            <label> Editeur(s) : </label>{{ livre.editeur.nomEditeur}}<br>
+            <label> Categorie : </label>{{ livre.categorie.designation}}<br>
+            <label> Auteur(s) :</label>
+            {% for auteur in livre.auteurs %}
+                |{{ auteur.prenom }} {{ auteur.nom }}|
+            {% endfor %}
+            <br>
+        </fieldset>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="{{ livre.image}}">                {% if app.user %}
+                    <a href="{{ path('panier_add', {'id': livre.id})}}" class="navbar-btn btn">
+                        <i class="fa fa-shopping-cart"></i> Add to panier</a>
+                {% endif %}
+            </div>
+
+        </div>
+</div>
+        <!-- ******************** -->
+
+
+        {{ include ('bibliotheque/footer.html.twig') }}

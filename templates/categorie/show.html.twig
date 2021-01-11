@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categorie{% endblock %}
+
+{% block body %}
+    <h1>Menu Categorie</h1>
+<br>
+
+    <fieldset>
+        <legend>Categorie informations (ID : #{{ categorie.id }}) </legend>
+        <label> Designation : </label>{{ categorie.designation}}<br>
+        <label> Description : </label>{{ categorie.description}}<br>
+
+    </fieldset>
+    {{ include('categorie/_delete_form.html.twig') }}
+
+
+{% endblock %}

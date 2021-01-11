@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editeur{% endblock %}
+
+{% block body %}
+    <h1>Menu Editeur</h1>
+<br>
+    <fieldset>
+        <legend>Editeur informations (ID : #{{ editeur.id  }}) </legend>
+        <label> Telephone : </label>{{ editeur.telephone}}<br>
+        <label> Nom Editeur : </label>{{ editeur.nomEditeur}}<br>
+        <label> Pays : </label>{{ editeur.pays}}<br>
+        <label> Adresse : </label>{{ editeur.adresse}}<br>
+        <label> Telephone : </label>{{ editeur.telephone}}<br>
+
+    </fieldset>
+    {{ include('editeur/_delete_form.html.twig') }}
+{% endblock %}

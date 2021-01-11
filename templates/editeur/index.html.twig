@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editeur index{% endblock %}
+
+{% block body %}
+    <h1>Editeur</h1>
+    <br>
+
+    <table class="table" border="1">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Id</th>
+                <th>NomEditeur</th>
+                <th>Pays</th>
+                <th>Adresse</th>
+                <th>Telephone</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for c,editeur in editeurs %}
+            <tr>
+                <td>{{ c+1 }}</td>
+                <td>{{ editeur.id }}</td>
+                <td>{{ editeur.nomEditeur }}</td>
+                <td>{{ editeur.pays }}</td>
+                <td>{{ editeur.adresse }}</td>
+                <td>{{ editeur.telephone }}</td>
+                <td>
+                    <a href="{{ path('editeur_show', {'id': editeur.id})}}">
+                        <span class="btn btn-success">
+                            <i class="fa fa-eye"></i>
+                        </span>
+                    </a>
+                    <a href="{{ path('editeur_edit', {'id': editeur.id})}}">
+                        <span class="btn btn-primary">
+                            <i class="fa fa-pencil"></i>
+                        </span>
+                    </a>
+                    <a href="{{ path('editeur_delete', {'id': editeur.id})}}">
+                        <span class="btn btn-danger">
+                            <i class="fa fa-trash-o"></i>
+                        </span>
+                    </a>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+<a href="{{ path('editeur_new')}}">
+                        <span class="btn btn-primary">
+                            <i class="fa fa-plus"></i>
+
+                        </span>
+    Ajouter un editeur
+{% endblock %}
