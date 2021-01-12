@@ -6,6 +6,7 @@ use App\Entity\Auteur;
 use App\Entity\Categorie;
 use App\Entity\Editeur;
 use App\Entity\Livre;
+use App\Entity\User;
 use App\Form\SearchForm;
 use App\Repository\AuteurRepository;
 use App\Repository\EditeurRepository;
@@ -25,7 +26,18 @@ class BibliothequeController extends AbstractController
 
     public function index(LivreRepository $livreRepository): Response
     {
+
+        $nbCategories = count($this->getDoctrine()->getRepository(Categorie::class)
+            ->findAll());
+        $nbLivers = count($this->getDoctrine()->getRepository(Livre::class)
+            ->findAll());
+        $nbUsers = count($this->getDoctrine()->getRepository(User::class)
+            ->findAll());
         return $this->render('bibliotheque/basebiblio.html.twig', [
+
+            'nbCategories' => $nbCategories,
+            'nbLivers' => $nbLivers,
+            'nbUsers' => $nbUsers,
 
         ]);
     }
@@ -42,7 +54,7 @@ class BibliothequeController extends AbstractController
            // 'editeurs' => $editeurRepository->findAll(),
             //'auteurs' => $auteurRepository->findAll(),
             'categories' => $categorieReposiory->findAll(),
-          //  'livres' => $livreRepository->findByCategorie($idcat),
+          //'livres' => $livreRepository->findByCategorie($idcat),
 
         ]);
     }
